@@ -1,4 +1,4 @@
-# ActionVar
+# ReactVar
 Reactive variables.    
 Переменные с поддержкой событий.
 
@@ -28,8 +28,8 @@ ____
 
  ## Ways to declare a reactive variable (Способы объявления реактивной переменной)
 ```C#
-    ActionVar<int> i = new ActionInt(3);
-    ActionInt i2 = new ActionInt(7);
+    ReactVar<int> i = new ReactInt(3);
+    ReactInt i2 = new ReactInt(7);
 ```
 
  ## Usage example (Пимер использования)
@@ -40,7 +40,7 @@ public class Test : MonoBehaviour
 {
     // Declare an reactive variable
     // Объявляем реактивную переменную
-    ActionVar<int> i = new ActionInt(3);
+    ReactVar<int> i = new ReactInt(3);
     
     void Start()
     {
