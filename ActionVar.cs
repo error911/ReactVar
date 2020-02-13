@@ -6,7 +6,7 @@
 using System;
 using UnityEngine;
 
-namespace GGTools
+namespace GGTools   //.ActionVars
 {
     public class ActionInt : ActionVar<int> { public ActionInt(int t) : base(t) { } public ActionInt() { } }
     public class ActionUInt : ActionVar<uint> { public ActionUInt(uint t) : base(t) { } public ActionUInt() { } }
