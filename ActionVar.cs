@@ -1,26 +1,26 @@
 ﻿/* 
- * https://github.com/error911/ActionVar
+ * https://github.com/error911/ReactVar
  * Free license: CC BY Murnik Roman
  */
 
 using System;
 using UnityEngine;
 
-namespace GGTools   //.ActionVars
+namespace GGTools   //.ReactVars
 {
-    public class ActionInt : ActionVar<int> { public ActionInt(int t) : base(t) { } public ActionInt() { } }
-    public class ActionUInt : ActionVar<uint> { public ActionUInt(uint t) : base(t) { } public ActionUInt() { } }
-    public class ActionFloat : ActionVar<float> { public ActionFloat(float t) : base(t) { } public ActionFloat() { } }
-    public class ActionDouble : ActionVar<double> { public ActionDouble(double t) : base(t) { } public ActionDouble() { } }
-    public class ActionBool : ActionVar<bool> { public ActionBool(bool t) : base(t) { } public ActionBool() { } }
-    public class ActionVector2 : ActionVar<Vector2> { public ActionVector2(Vector2 t) : base(t) { } public ActionVector2() { } }
-    public class ActionVector3 : ActionVar<Vector3> { public ActionVector3(Vector3 t) : base(t) { } public ActionVector3() { } }
-    public class ActionVector4 : ActionVar<Vector4> { public ActionVector4(Vector4 t) : base(t) { } public ActionVector4() { } }
-    public class ActionVector2Int : ActionVar<Vector2Int> { public ActionVector2Int(Vector2Int t) : base(t) { } public ActionVector2Int() { } }
-    public class ActionVector3Int : ActionVar<Vector3Int> { public ActionVector3Int(Vector3Int t) : base(t) { } public ActionVector3Int() { } }
-    public class ActionColor : ActionVar<Color> { public ActionColor(Color t) : base(t) { } public ActionColor() { } }
+    public class ReactInt : ReactVar<int> { public ReactInt(int t) : base(t) { } public ReactInt() { } }
+    public class ReactUInt : ReactVar<uint> { public ReactUInt(uint t) : base(t) { } public ReactUInt() { } }
+    public class ReactFloat : ReactVar<float> { public ReactFloat(float t) : base(t) { } public ReactFloat() { } }
+    public class ReactDouble : ReactVar<double> { public ReactDouble(double t) : base(t) { } public ReactDouble() { } }
+    public class ReactBool : ReactVar<bool> { public ReactBool(bool t) : base(t) { } public ReactBool() { } }
+    public class ReactVector2 : ReactVar<Vector2> { public ReactVector2(Vector2 t) : base(t) { } public ReactVector2() { } }
+    public class ReactVector3 : ReactVar<Vector3> { public ReactVector3(Vector3 t) : base(t) { } public ReactVector3() { } }
+    public class ReactVector4 : ReactVar<Vector4> { public ReactVector4(Vector4 t) : base(t) { } public ReactVector4() { } }
+    public class ReactVector2Int : ReactVar<Vector2Int> { public ReactVector2Int(Vector2Int t) : base(t) { } public ReactVector2Int() { } }
+    public class ReactVector3Int : ReactVar<Vector3Int> { public ReactVector3Int(Vector3Int t) : base(t) { } public ReactVector3Int() { } }
+    public class ReactColor : ReactVar<Color> { public ReactColor(Color t) : base(t) { } public ReactColor() { } }
 
-    public class ActionVar<T>
+    public class ReactVar<T>
     {
         public T Value
         {
@@ -43,7 +43,7 @@ namespace GGTools   //.ActionVars
         /// Подписаться
         /// </summary>
         /// <param name="action"></param>
-        public ActionVar<T> Subscribe(Action<T> action)
+        public ReactVar<T> Subscribe(Action<T> action)
         {
             this.action += action;
             return this;
@@ -52,7 +52,7 @@ namespace GGTools   //.ActionVars
         /// <summary>
         /// Принудительно вызвать событие
         /// </summary>
-        public ActionVar<T> Call()
+        public ReactVar<T> Call()
         {
             if (_Value == null) action?.Invoke(default);
             else action?.Invoke(_Value);
@@ -63,7 +63,7 @@ namespace GGTools   //.ActionVars
         /// Отписаться
         /// </summary>
         /// <param name="action"></param>
-        public ActionVar<T> Unsubscribe(Action<T> action)
+        public ReactVar<T> Unsubscribe(Action<T> action)
         {
             this.action -= action;
             return this;
@@ -72,7 +72,7 @@ namespace GGTools   //.ActionVars
         /// <summary>
         /// Отписаться от всех событий
         /// </summary>
-        public ActionVar<T> UnsubscribeAll()
+        public ReactVar<T> UnsubscribeAll()
         {
             this.action = null;
             return this;
@@ -81,13 +81,13 @@ namespace GGTools   //.ActionVars
         #endregion
 
         #region Конструкторы
-        public ActionVar(T t)
+        public ReactVar(T t)
         {
             _Value = t;
         }
 
 
-        public ActionVar()
+        public ReactVar()
         {
         }
         #endregion
