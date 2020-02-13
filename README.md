@@ -1,5 +1,6 @@
 # ActionVar
-Reactive variables. Переменные с поддержкой событий.
+Reactive variables.    
+Переменные с поддержкой событий.
 
 
 Free license: CC BY Murnik Roman    
