@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* 
+ * https://github.com/error911/ActionVar
+ * Free license: CC BY Murnik Roman
+ */
+
+using System;
 using UnityEngine;
 
 namespace GGTools
@@ -10,8 +15,10 @@ namespace GGTools
     public class ActionBool : ActionVar<bool> { public ActionBool(bool t) : base(t) { } public ActionBool() { } }
     public class ActionVector2 : ActionVar<Vector2> { public ActionVector2(Vector2 t) : base(t) { } public ActionVector2() { } }
     public class ActionVector3 : ActionVar<Vector3> { public ActionVector3(Vector3 t) : base(t) { } public ActionVector3() { } }
+    public class ActionVector4 : ActionVar<Vector4> { public ActionVector4(Vector4 t) : base(t) { } public ActionVector4() { } }
     public class ActionVector2Int : ActionVar<Vector2Int> { public ActionVector2Int(Vector2Int t) : base(t) { } public ActionVector2Int() { } }
     public class ActionVector3Int : ActionVar<Vector3Int> { public ActionVector3Int(Vector3Int t) : base(t) { } public ActionVector3Int() { } }
+    public class ActionColor : ActionVar<Color> { public ActionColor(Color t) : base(t) { } public ActionColor() { } }
 
     public class ActionVar<T>
     {
