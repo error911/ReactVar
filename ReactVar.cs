@@ -6,7 +6,7 @@
 using System;
 using UnityEngine;
 
-namespace GGTeam.Tools.ReactVars
+namespace GGTeam.ReactVars
 {
     public class ReactInt : ReactVar<int> { public ReactInt(int t) : base(t) { } public ReactInt() { } }
     public class ReactUInt : ReactVar<uint> { public ReactUInt(uint t) : base(t) { } public ReactUInt() { } }
